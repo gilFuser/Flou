@@ -5,7 +5,7 @@ s.options
 	.numAudioBusChannels_(1024)	 // for proxy usage: lots of ar bus space
 	.memSize_(8192 * 64)		 // 512 MB memory for buffers, soundfiles!
 	.maxNodes_(1024 * 16)		 // lots of synth nodes
-	.numWireBufs_(64*8)			 // fat synthdefs need lots of interconnects
+	.numWireBufs_(64*8)		 // fat synthdefs need lots of interconnects
 ;
 q = q ? ();
 )
@@ -20,15 +20,15 @@ s.recChannels_(2);	// record stereo out only
 s.scope(2);
 p = Ndef.dictFor(s); p.push;
 
-~kaos = 0.1;        // so far for bubble's strum
+~kaos = 0.1;           // so far for bubble's strum
 ~bpm = 120.0;
 ~bpm.fadeTime = 1;
 ~div = 4;
-~ampL = 0.5;        // for bubble's amp
+~ampL = 0.5;           // for bubble's amp
 ~dist = 0.1;
 )
 
-//           ////  here are the instruments  ////
+//              ////  here are the instruments  ////
 (
 p.makeTempoClock(~bpm.source/60); p.quant = (60/~bpm.source *4);
 
@@ -38,7 +38,7 @@ p.makeTempoClock(~bpm.source/60); p.quant = (60/~bpm.source *4);
 "instruments/bolhas*".loadRelative;
 );
 
-//                 ////  GUI! ////
+//                    ////  GUI! ////
 (
 y = Window.new("FLOU OU OU", Rect(600, 0, 1360, 700),scroll:true);
 q.guiFlou = y.addFlowLayout(10@10, 5@10);
